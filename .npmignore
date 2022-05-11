@@ -166,4 +166,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+.git
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,webstorm,visualstudiocode
