@@ -10,17 +10,16 @@ const inquirerPromise = require("../../../lib/inquirer-promise");
 
 module.exports = async function (dir) {
   // 提示输入 API key
-  // const { apiKey } = await inquirerPromise([
-  //   {
-  //     type: "input",
-  //     name: "apiKey",
-  //     message:
-  //       "Input your tinypng API key, visist https://tinypng.com/developers for more infomation.",
-  //   },
-  // ]);
+  const { apiKey } = await inquirerPromise([
+    {
+      type: "input",
+      name: "apiKey",
+      message:
+        "Input your tinypng API key, visist https://tinypng.com/developers for more infomation.",
+    },
+  ]);
 
-  // tinify.key = apiKey;
-  tinify.key = 'NpmX8kWybqyFY58Xs27nWLCR49G0Fy01';
+  tinify.key = apiKey;
   tinify.validate(function (err) {
     if (err) {
       return console.error(err);

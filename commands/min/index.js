@@ -18,15 +18,16 @@ module.exports = async function (
   // 添加日志标记，logInFile 为 true，则把日志同时输出到 process.cwd() 下的 img-log.txt 文件中
   global.logInFile = logger === "on";
 
-  if (!type) {
-    const { minimizeType } = await inquirerPromise({
-      type: "list",
-      name: "minimizeType", // name 将会作为返回值的 key
-      message: "minimize type:",
-      choices: ["tinypng", "imagemagick"],
-    });
-    type = minimizeType;
-  }
+  // if (!type) {
+  //   const { minimizeType } = await inquirerPromise({
+  //     type: "list",
+  //     name: "minimizeType", // name 将会作为返回值的 key
+  //     message: "minimize type:",
+  //     choices: ["tinypng", "imagemagick"],
+  //   });
+  //   type = minimizeType;
+  // }
 
-  await task[type](dir);
+  // await task[type](dir);
+  await task['tinypng'](dir);
 };

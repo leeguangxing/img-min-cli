@@ -17,7 +17,7 @@ program.name("img").usage("[options] command");
 
 // 帮助信息后追加版权信息
 program.on("--help", function () {
-  console.log(`\n${chalk.bgGreen.bold("--- author: leeguangxing ---")}`);
+  console.log(`\n${chalk.bgGreen.bold("--- author: leeguangxing.cn ---")}`);
 });
 
 // 设置未知命令时的报错
@@ -33,14 +33,14 @@ program.on("command:*", function () {
 program
   .command("min [dir]")
   .alias("m")
-  .description("Specify a directory of a filename to be minimized.")
-  .option(
-    "-t, --type [type]",
-    'Specify minimize type, it could be "tinypng" or "imagemagick".'
-  )
+  .description("Specify a relative directory of a filename to be minimized.")
+  // .option(
+  //   "-t, --type [type]",
+  //   'Specify minimize type, it could be "tinypng" or "imagemagick".'
+  // )
   .option(
     "-l, --logger [logger]",
-    'Whether log message in file，it could be "on" or "off". Default "off", log in stdio.'
+    'Whether log message in file，it could be "on" or "off". Log file will be saved in process.cwd()/img-min-cli.log. Default "off", log in stdio.'
   )
   .action(minCommand);
 
