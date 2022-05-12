@@ -1,8 +1,15 @@
 # img-min-cli
-图片批量优化 cli 工具。
+图片批量优化 cli 工具，支持 WebP、PNG 和 JPEG 格式图片。
 
 ## 用法
 1、将 npm 包安装到全局。
+```shell script
+yarn global add @leeguangxing/img-min-cli
+```
+或
+```shell script
+npm i -g @leeguangxing/img-min-cli
+```
 
 2、执行优化命令：
 ```shell script
@@ -15,7 +22,7 @@ img min [options] [dir]
 |-l, --logger|是否将日志输入到执行目录下的 img-min-cli.log 文件中，可选值 on 或者 off||
 
 ### dir  
-需要执行优化的目录或图片文件路径。
+dir 为需要执行优化的目录或图片文件路径。
 
 <br>
 
@@ -34,7 +41,7 @@ cli 工具会根据 API key 查询当月使用情况，并和需要优化图片�
 ```shell script
 img min test.png
 ```
-2、压缩整个目录下的所有 jpg 和 png 图片，并将日志输出到文件：
+2、递归压缩整个目录下的所有 WebP、PNG 和 JPEG 格式图片，并将日志输出到文件（用于跟踪压缩失败的图片）：
 ```shell script
 img min your_relative_dir -l on
 ```

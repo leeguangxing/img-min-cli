@@ -250,13 +250,13 @@ path-parse@^1.0.6:
 
 "promise-nodeify@>= 0.1":
   version "3.0.1"
-  resolved "https://registry.npm.taobao.org/promise-nodeify/download/promise-nodeify-3.0.1.tgz#f0f5d9720ee9ec71dd2bfa92667be504c10229c2"
-  integrity sha1-8PXZcg7p7HHdK/qSZnvlBMECKcI=
+  resolved "https://registry.npmjs.org/promise-nodeify/-/promise-nodeify-3.0.1.tgz#f0f5d9720ee9ec71dd2bfa92667be504c10229c2"
+  integrity sha512-ghsSuzZXJX8iO7WVec2z7GI+Xk/EyiD+JZK7AZKhUqYfpLa/Zs4ylUD+CwwnKlG6G3HnkUPMAi6PO7zeqGKssg==
 
 "proxying-agent@>= 2.1":
   version "2.4.0"
-  resolved "https://registry.npm.taobao.org/proxying-agent/download/proxying-agent-2.4.0.tgz#6796549fc46bf3423554440f64a4449220f9014d"
-  integrity sha1-Z5ZUn8Rr80I1VEQPZKREkiD5AU0=
+  resolved "https://registry.npmjs.org/proxying-agent/-/proxying-agent-2.4.0.tgz#6796549fc46bf3423554440f64a4449220f9014d"
+  integrity sha512-b9vDqIcViJZVsWPpQlp9Py74u+Wqd0a+kMkkg7zX58mwNtrNbOChNlRTM7lUrlpiwNzyJCV8+5D8rnZYLDFh7Q==
 
 rechoir@^0.6.2:
   version "0.6.2"
@@ -340,10 +340,10 @@ through@^2.3.6:
   resolved "https://registry.npm.taobao.org/through/download/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
   integrity sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=
 
-tinify@^1.6.0-beta.2:
-  version "1.6.0-beta.2"
-  resolved "https://registry.npm.taobao.org/tinify/download/tinify-1.6.0-beta.2.tgz#5985ca021d11685d846c53ac8465dce78116adfe"
-  integrity sha1-WYXKAh0RaF2EbFOshGXc54EWrf4=
+tinify@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.npmjs.org/tinify/-/tinify-1.6.1.tgz#b27a032c447ebddd4231007489069a434ef72b5e"
+  integrity sha512-9XITdFE+p3+W/7HDgDEfxETbAh0vDdul33qo81P0Q+TNR8l6TALDb52MMhs7fWz7i4Pp3y1VdVYEy4EyiF4gUw==
   dependencies:
     promise-nodeify ">= 0.1"
     proxying-agent ">= 2.1"
