@@ -9,25 +9,28 @@ const glob = require("glob");
 const inquirerPromise = require("../../../lib/inquirer-promise");
 
 module.exports = async function (dir) {
-  // 提示输入 API key
-  // const { apiKey } = await inquirerPromise([
-  //   {
-  //     type: "input",
-  //     name: "apiKey",
-  //     message:
-  //       "Input your tinypng API key, visist https://tinypng.com/developers for more infomation.",
-  //   },
-  // ]);
+  if(process.env.TINYPNG_API_KEY) {
+    tinify.key = process.env.TINYPNG_API_KEY
+  } else {
+    // 提示输入 API key
+    const { apiKey } = await inquirerPromise([
+      {
+        type: "input",
+        name: "apiKey",
+        message:
+          "Input your tinypng API key, visist https://tinypng.com/developers for more infomation.",
+      },
+    ]);
+    tinify.key = apiKey;
+  }
 
-  // tinify.key = apiKey;
-  tinify.key = 'NpmX8kWybqyFY58Xs27nWLCR49G0Fy01';
   tinify.validate(function (err) {
     if (err) {
       return console.error(err);
     }
 
     const compressionsThisMonth = tinify.compressionCount;
-    console.warn(`本月已压缩图片：${compressionsThisMonth} 张`);
+    console.warn(`Compressed pictures this month: ${compressionsThisMonth}`);
 
     dir = path.join(process.cwd(), dir);
 
@@ -39,7 +42,7 @@ module.exports = async function (dir) {
           return console.error(err);
         }
         // 输出优化成功信息
-        console.success(`${dir} 优化完成`);
+        console.success(`${dir} Optimization succeeded!`);
       });
     } else {
       const options = {};
@@ -48,7 +51,7 @@ module.exports = async function (dir) {
           return console.error(err);
         }
         if (files.length > 500 - compressionsThisMonth) {
-          return console.warn("图片数量大于本月剩余可优化数量！");
+          return console.warn("The number of images is greater than the remaining number of optimizations this month!");
         }
         for (let i = 0; i < files.length; i++) {
           const currentFile = files[i];
@@ -57,7 +60,7 @@ module.exports = async function (dir) {
               return console.error(err);
             }
             // 输出优化成功信息
-            console.success(`${currentFile} 优化完成`);
+            console.success(`${currentFile} Optimization succeeded!`);
           });
         }
       });

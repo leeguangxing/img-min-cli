@@ -1,47 +1,59 @@
 # img-min-cli
-图片批量优化 cli 工具，支持 WebP、PNG 和 JPEG 格式图片。
+Image batch optimization cli tool that supports WebP, PNG and JPEG.
 
-## 用法
-1、将 npm 包安装到全局。
+<br>
+
+## Usage
+1. Install packages globally: 
 ```shell script
 yarn global add @leeguangxing/img-min-cli
 ```
-或
+or
 ```shell script
 npm i -g @leeguangxing/img-min-cli
 ```
 
-2、执行优化命令：
+2. Execute optimization commands:
 ```shell script
 img min [options] [dir]
 ```
 
-### options  
-|选项|说明|
-|:---:|:---:|
-|-l, --logger|是否将日志输入到执行目录下的 img-min-cli.log 文件中，可选值 on 或者 off||
+<br>
 
-### dir  
-dir 为需要执行优化的目录或图片文件路径。
+## All options  
+|options|description|
+|:---:|:---:|
+|-l, --logger| Whether to output the log to the img-min-cli.log file in the execution directory, the optional value is on or off. |
 
 <br>
 
-## 方案
+## Dir  
+dir is the directory or image file path to be optimized.
+
+<br>
+
+## Solution
 
 ### tinypng
-需要使用 API key，每月免费上限每个邮箱帐号 500 张，详见：  
+API key is required, and the monthly free limit is 500 per email account. For details, see: 
 [https://tinypng.com/developers](https://tinypng.com/developers)
 
-cli 工具会根据 API key 查询当月使用情况，并和需要优化图片数量作比较。限额不能完成任务，则自动退出。
+The cli tool will query the usage of the current month based on the API key and compare it with the number of images that need to be optimized. If the quota cannot complete the task, it will automatically exit.
 
 <br>
 
-## 使用例子
-1、压缩单个文件：
+## ENV
+
+You can save your API key in environment TINYPNG_API_KEY. The cli tool will get it from `process.env.TINYPNG_API_KEY`. Otherwise you need to manually enter it each time.
+
+<br>
+
+## Example
+1. Compress a single file:
 ```shell script
 img min test.png
 ```
-2、递归压缩整个目录下的所有 WebP、PNG 和 JPEG 格式图片，并将日志输出到文件（用于跟踪压缩失败的图片）：
+2. Recursively compress all WebP, PNG, and JPEG images in the entire directory, and output the log to a file (for tracking failed images):
 ```shell script
 img min your_relative_dir -l on
 ```
