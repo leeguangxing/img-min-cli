@@ -1,6 +1,6 @@
 {
   "name": "@leeguangxing/img-min-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "cli tool for compress images",
   "main": "./bin/index.js",
   "bin": {

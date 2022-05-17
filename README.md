@@ -1,6 +1,8 @@
 # img-min-cli
 Image batch optimization cli tool that supports WebP, PNG and JPEG.
 
+![https://leeguangxing.cn/pic/img-min-cli.gif](https://leeguangxing.cn/pic/img-min-cli.gif)
+
 <br>
 
 ## Usage
